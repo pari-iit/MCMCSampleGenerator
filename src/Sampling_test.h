@@ -1,7 +1,5 @@
 /*******************************************************************************
- * Copyright (C) 2020 Optimal Synthesis Inc
- *
- * This file is a part of Monte Carlo simulation for fire control schedulers
+ * Copyright (C) 2020 Parikshit Dutta
  *
  * All Rights Reserved.
  ******************************************************************************/
