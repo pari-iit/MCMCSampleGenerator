@@ -81,13 +81,8 @@ static std::vector<double> genMultiVariateNormalSample(const std::vector<double>
         std::normal_distribution ndist(0.0,sqrt(evals(i)) );//this takes in mean and std dev
         samp(i) = ndist(eng);
     }
-    // std::cout << "In normal distribution \n";
-    // std::cout <<" mu = " << mu << std::endl << " sig = " << sig << std::endl;
-    // std::cout << "evecs = " << evecs << std::endl << " evals = " << evals << std::endl;
-    // std::cout << "bfore samp = " << samp << std::endl;    
+
     samp = evecs*samp + mu;
-    // std::cout << "after samp = " << samp << std::endl;
-    // std::cout <<"out of normal.\n";
     std::vector<double> nsamp(ndim);
     Eigen::VectorXd::Map(&nsamp[0],ndim) = samp;
 
@@ -556,8 +551,7 @@ public:
             double num = _targ_dist->evalDensity(x0);
             double den = _prop_dist->evalDensity(x0);   
             double u = udist(eng);
-            // std::cout << "u = " << u << " num = " << num <<" den = " << den  << " num/(_M*den) = " << num/(_M*den) << std::endl;
-            // std::cout << "size of op = " << op.size() << std::endl;
+
                      
             if (u < num/(_M*den) ){
                 op.push_back(x0);
